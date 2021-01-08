@@ -13,7 +13,7 @@ int main()
         for(int j=0; j < i; j++)
             cout << str[j];
         for(int j=i-2; j >= 0; j--)
-            cout << str[j];
+            cout << str[j]; 
         cout << endl;
     }
 
