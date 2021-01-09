@@ -27,7 +27,7 @@ int main()
             case 'P' : {
                 if(numbers.size() == 0)
                     cout << "[] - The list is empty\n";
-                else{
+                else {
                     cout << " [ ";
                     for(int number: numbers)
                         cout << number << " ";
