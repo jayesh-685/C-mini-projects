@@ -1,19 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 int main() 
 {  
-    int max = 10, min = 5;
-    int *p = nullptr;
-    p = &max;
-    cout << *p << endl;
-    *p = max;
-    cout << *p << endl;
-    *p = min;
-    cout << *p << endl;
-    p = &min;
-    cout << *p << endl;
+    int num = 5;
+    const int *pnum = &num;
+    num = 6; 
 
     return 0;
 }

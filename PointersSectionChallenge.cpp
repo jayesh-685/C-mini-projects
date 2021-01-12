@@ -20,10 +20,12 @@ int main()
     print(arr2, 3);
     cout << endl;
 
+    int *pFinal = apply_all(arr1, 5, arr2, 3);
     cout << "Final Array: ";
-    print(apply_all(arr1, 5, arr2, 3), 15);
+    print(pFinal, 15);
     cout << endl;
 
+    delete [] pFinal;
 
     return 0;
 }
@@ -32,22 +34,24 @@ int *apply_all(int arr1[], int size1, int arr2[], int size2)
 {
     int *result {nullptr};
     int size = size1 * size2;
+    int position = 0;
 
     result = new int [size];
 
-    for (int i=0; i<size2; i++) {
-        for (int j=0, k=i*size1; j<size1; j++, k++) {
-            result[k] = arr2[i] * arr1[j];
+    for (size_t i=0; i<size2; i++) {
+        for (size_t j=0; j<size1; j++) {
+            result[position] = arr2[i] * arr1[j];
+            position++;
         }
     }
 
     return result;
 }
 
-void print(int arr[], int size)
+void print(int* const arr, int size)
 {
     cout << "[ ";
-    for(int i=0; i<size; i++)
+    for(size_t i=0; i<size; i++)
         cout << arr[i] << " ";
-    cout << "]";
+    cout << "]" << endl;
 }
